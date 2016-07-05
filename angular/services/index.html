@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="servicesApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular services</title>
+  <script src="js/angular/angular.js"></script>
+</head>
+<body>
+  <div ng-controller="ServiceController">
+    <button ng-click="log()">Log a thing</button>
+  </div>
+  <div ng-controller="PieController">
+    Pies in the cart: {{cart}}
+    <!--Give me the menu!-->
+    <ul data-ng-repeat='item in menuItems track by item.id'>
+      <!--Add stuff from the menu!-->
+      <li>
+        {{item.name}} ${{item.cost/100}}
+        <button ng-click="addToCart(item, 1)">GIMME PIE</button>
+      </li>
+    </ul>
+  </div>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/cart_service.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/pie_controller.js"></script>
+</body>
+</html>
